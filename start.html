@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Get Started - Portech</title>
+
+<link rel="icon" type="image/png" href="logo.png">
+
+<!-- PDF Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',Tahoma,Verdana,sans-serif;
+}
+
+body{
+background:
+linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.9)),
+url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80')
+center/cover no-repeat fixed;
+
+color:white;
+}
+
+
+/* NAVBAR */
+
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:15px 5%;
+
+background: rgba(0,0,0,0.4);
+backdrop-filter: blur(10px);
+border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+width:50px;
+height:50px;
+border-radius:50%;
+border:2px solid white;
+}
+
+
+.nav-links{
+list-style:none;
+display:flex;
+gap:15px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+padding:10px 18px;
+border-radius:20px;
+background:rgba(255,255,255,0.1);
+}
+
+
+.login-btn{
+text-decoration:none;
+color:black;
+background:#00eaff;
+padding:10px 25px;
+border-radius:25px;
+}
+
+
+/* FORM */
+
+.form-section{
+padding-top:120px;
+text-align:center;
+}
+
+
+.form-container{
+width:420px;
+margin:auto;
+background:rgba(0,0,0,0.7);
+padding:30px;
+border-radius:15px;
+border:1px solid rgba(255,255,255,0.1);
+backdrop-filter:blur(8px);
+}
+
+
+input,textarea,select{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:8px;
+border:none;
+outline:none;
+}
+
+
+.submit-btn{
+margin-top:10px;
+background:#00eaff;
+color:black;
+padding:12px;
+border:none;
+border-radius:25px;
+cursor:pointer;
+font-size:16px;
+}
+
+.submit-btn:hover{
+background:#ff6a00;
+color:white;
+}
+
+
+/* OUTPUT */
+
+.output{
+margin-top:40px;
+padding:40px 10%;
+display:none;
+}
+
+.output-box{
+background:rgba(0,0,0,0.7);
+padding:25px;
+margin-bottom:20px;
+border-radius:10px;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.code-box{
+background:black;
+padding:20px;
+border-radius:10px;
+overflow:auto;
+border:1px solid #00eaff;
+color:#00ffae;
+}
+
+
+/* DOWNLOAD BUTTON */
+
+.download-btn{
+
+display:inline-block;
+margin-top:20px;
+
+background:#00ffae;
+color:black;
+
+padding:12px 25px;
+
+border-radius:25px;
+
+cursor:pointer;
+
+font-weight:bold;
+
+}
+
+.download-btn:hover{
+background:#ff6a00;
+color:white;
+}
+
+
+/* FOOTER */
+
+.footer{
+margin-top:40px;
+text-align:center;
+padding:20px;
+color:#aaa;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav class="navbar">
+
+<div class="logo">
+
+<img src="logo.png">
+<h2>Portech</h2>
+
+</div>
+
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="Services.html">Services</a></li>
+<li><a href="portfolio.html">Portfolio</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+
+<a href="login.html" class="login-btn">
+
+Login
+
+</a>
+
+</nav>
+
+
+
+<section class="form-section">
+
+<h1>Start Your Project</h1>
+
+<p>Fill the details and generate your website</p>
+
+
+<div class="form-container">
+
+<form onsubmit="generateProject(); return false;">
+
+<input type="text" id="name" placeholder="Your Name" required>
+
+<input type="email" id="email" placeholder="Email Address" required>
+
+<input type="text" id="business" placeholder="Business Name" required>
+
+<select id="type" required>
+
+<option>Website Type</option>
+<option>Business Website</option>
+<option>Ecommerce Website</option>
+<option>Portfolio Website</option>
+<option>Personal Website</option>
+
+</select>
+
+
+<textarea id="req" rows="4" placeholder="Project Requirements"></textarea>
+
+
+<button class="submit-btn">
+
+Generate Project
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+
+<section class="output" id="result">
+
+<div class="output-box">
+
+<h2>Project Details</h2>
+
+<p id="details">
+
+</p>
+
+</div>
+
+
+<div class="output-box">
+
+<h2>Requirements</h2>
+
+<ul>
+
+<li>Responsive Website</li>
+<li>Modern UI Design</li>
+<li>Fast Loading Speed</li>
+<li>SEO Friendly Structure</li>
+
+</ul>
+
+</div>
+
+
+<div class="output-box">
+
+<h2>Generated Code</h2>
+
+<div class="code-box">
+
+&lt;h1&gt;Your Website&lt;/h1&gt;
+
+</div>
+
+</div>
+
+
+<center>
+
+<button onclick="downloadPDF()" class="download-btn">
+
+Download PDF
+
+</button>
+
+</center>
+
+</section>
+
+
+
+<div class="footer">
+
+© 2026 Portech
+
+</div>
+
+
+
+<script>
+
+function generateProject(){
+
+var name=document.getElementById("name").value;
+var email=document.getElementById("email").value;
+var business=document.getElementById("business").value;
+var type=document.getElementById("type").value;
+var req=document.getElementById("req").value;
+
+
+document.getElementById("details").innerHTML=
+
+"Client Name: "+name+"<br><br>"+
+
+"Email: "+email+"<br><br>"+
+
+"Business: "+business+"<br><br>"+
+
+"Website Type: "+type+"<br><br>"+
+
+"Requirements: "+req;
+
+
+document.getElementById("result").style.display="block";
+
+window.scrollTo({
+
+top:document.getElementById("result").offsetTop,
+
+behavior:"smooth"
+
+});
+
+}
+
+
+
+function downloadPDF(){
+
+const { jsPDF } = window.jspdf;
+
+var doc=new jsPDF();
+
+doc.text("PORTECH PROJECT DETAILS",20,20);
+
+doc.text(document.getElementById("details").innerText,20,40);
+
+doc.save("Portech_Project.pdf");
+
+}
+
+</script>
+
+
+</body>
+</html>

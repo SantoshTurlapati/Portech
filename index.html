@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Portech</title>
+
+<link rel="icon" type="image/png" href="logo.png">
+
+<style>
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',Tahoma,Verdana,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#000;
+color:white;
+}
+
+
+/* STARS BACKGROUND */
+
+.stars{
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:url("https://www.transparenttextures.com/patterns/stardust.png");
+
+animation:moveStars 60s linear infinite;
+
+opacity:0.3;
+
+z-index:-1;
+
+}
+
+@keyframes moveStars{
+
+from{background-position:0 0;}
+
+to{background-position:10000px 5000px;}
+
+}
+
+
+/* NAVBAR */
+
+.navbar{
+
+position:fixed;
+top:0;
+width:100%;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:15px 5%;
+
+background: rgba(0,0,0,0.4);
+
+backdrop-filter: blur(10px);
+
+border-bottom:1px solid rgba(255,255,255,0.2);
+
+box-shadow:0px 5px 20px rgba(0,0,0,0.5);
+
+z-index:1000;
+
+}
+
+
+/* LOGO */
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+width:50px;
+height:50px;
+border-radius:50%;
+border:2px solid white;
+}
+
+.logo h2{
+color:white;
+}
+
+
+/* NAV LINKS */
+
+.nav-links{
+list-style:none;
+display:flex;
+gap:15px;
+}
+
+.nav-links a{
+
+text-decoration:none;
+color:white;
+padding:10px 18px;
+border-radius:20px;
+background:rgba(255,255,255,0.1);
+transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+background:#00eaff;
+color:black;
+transform:translateY(-2px);
+
+}
+
+
+/* LOGIN BUTTON */
+
+.login-btn{
+
+text-decoration:none;
+color:black;
+background:#00eaff;
+padding:10px 25px;
+border-radius:25px;
+transition:.3s;
+
+}
+
+.login-btn:hover{
+background:#ff6a00;
+color:white;
+}
+
+
+/* HERO SECTION */
+
+.hero-section{
+
+height:100vh;
+
+background:
+
+linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),
+
+url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')
+
+center/cover no-repeat;
+
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding-top:80px;
+
+}
+
+
+.hero-content{
+max-width:800px;
+animation:fadeUp 1.5s;
+}
+
+.hero-content h1{
+font-size:55px;
+margin-bottom:20px;
+}
+
+.hero-content p{
+font-size:20px;
+margin-bottom:40px;
+}
+
+
+/* HERO BUTTONS */
+
+.hero-buttons{
+
+display:flex;
+justify-content:center;
+gap:20px;
+
+}
+
+.btn{
+
+padding:15px 35px;
+border-radius:30px;
+cursor:pointer;
+border:none;
+font-size:16px;
+transition:.3s;
+
+}
+
+.btn-primary{
+
+background:#00eaff;
+color:black;
+
+}
+
+.btn-primary:hover{
+transform:scale(1.1);
+}
+
+.btn-outline{
+
+background:transparent;
+border:2px solid white;
+color:white;
+
+}
+
+.btn-outline:hover{
+background:white;
+color:black;
+}
+
+
+/* FEATURE CARDS DARK */
+
+.feature-services{
+
+padding:80px 10%;
+
+/* Dark Gradient */
+background:linear-gradient(to bottom,#000,#020617);
+
+margin-top:-80px;
+
+}
+
+.feature-container{
+
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+
+}
+
+.feature-card{
+
+background:rgba(255,255,255,0.05);
+
+width:250px;
+
+padding:30px;
+
+border-radius:15px;
+
+border:1px solid rgba(255,255,255,0.1);
+
+text-align:center;
+
+transition:0.4s;
+
+backdrop-filter:blur(8px);
+
+}
+
+.feature-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0px 0px 25px #00eaff;
+
+}
+
+.feature-card h3{
+
+margin-bottom:10px;
+color:#00eaff;
+
+}
+
+.feature-card p{
+
+font-size:14px;
+color:#ccc;
+
+}
+
+
+/* FOOTER */
+
+.footer{
+
+background:#111;
+padding:30px;
+text-align:center;
+color:#aaa;
+
+}
+
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(50px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="stars"></div>
+
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">
+
+<img src="logo.png">
+<h2>Portech</h2>
+
+</div>
+
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="Services.html">Services</a></li>
+<li><a href="portfolio.html">Portfolio</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+
+<a href="login.html" class="login-btn">
+
+Login
+
+</a>
+
+</nav>
+
+
+
+<!-- HERO -->
+
+<header class="hero-section">
+
+<div class="hero-content">
+
+<h1>
+
+WE CREATE WEBSITE THE WAY YOU WANT
+
+</h1>
+
+<p>
+
+Professional Website Design and Development Services
+
+</p>
+
+
+<div class="hero-buttons">
+
+<button class="btn btn-primary" onclick="window.location.href='start.html'">
+
+Get Started
+
+</button>
+
+<button class="btn btn-outline" heref="portfolio.html">
+
+Portfolio
+
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+
+
+<!-- FEATURE SERVICES -->
+
+<section class="feature-services">
+
+<div class="feature-container">
+
+
+<div class="feature-card">
+
+<h3>UI/UX Design</h3>
+
+<p>
+
+Modern and user-friendly interface designs that improve user experience.
+
+</p>
+
+</div>
+
+
+
+<div class="feature-card">
+
+<h3>Development</h3>
+
+<p>
+
+Fast and responsive website development using modern technologies.
+
+</p>
+
+</div>
+
+
+
+<div class="feature-card">
+
+<h3>Branding</h3>
+
+<p>
+
+Professional branding solutions that make your business stand out.
+
+</p>
+
+</div>
+
+
+
+<div class="feature-card">
+
+<h3>Search Optimization</h3>
+
+<p>
+
+SEO optimized websites that improve visibility in search engines.
+
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<div class="footer">
+
+© 2026 Portech | All Rights Reserved
+
+</div>
+
+
+</body>
+
+</html>

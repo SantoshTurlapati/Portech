@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Portech Login</title>
+<link rel="icon" type="image/png" href="logo.png">
+
+<style>
+
+/* BASE */
+
+body, html {
+margin:0;
+padding:0;
+font-family:'Segoe UI',Tahoma,Verdana,sans-serif;
+height:100%;
+overflow:hidden;
+
+background:linear-gradient(
+rgba(0,0,0,0.6),
+rgba(0,0,0,0.7)
+),
+url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80')
+center/cover no-repeat;
+}
+
+
+/* VIDEO */
+
+#bg-video{
+position:fixed;
+right:0;
+bottom:0;
+min-width:100%;
+min-height:100%;
+object-fit:cover;
+z-index:-1;
+filter:brightness(0.7);
+}
+
+
+/* LOGIN CARD */
+
+.login-container{
+
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+
+background:rgba(0,0,0,0.45);
+backdrop-filter:blur(14px);
+
+border:1px solid rgba(0,255,255,0.3);
+
+padding:45px 40px;
+border-radius:18px;
+
+box-shadow:0 0 30px rgba(0,229,255,0.3);
+
+width:340px;
+
+color:white;
+text-align:center;
+
+animation:fade 1.5s;
+
+}
+
+
+/* TITLE */
+
+.login-container h2{
+margin-bottom:5px;
+letter-spacing:3px;
+color:#00e5ff;
+font-weight:300;
+}
+
+
+/* TAGLINE */
+
+.tagline{
+font-size:13px;
+margin-bottom:25px;
+color:#cccccc;
+}
+
+
+/* INPUTS */
+
+.input-group{
+margin-bottom:25px;
+}
+
+input{
+
+width:100%;
+padding:12px;
+
+background:transparent;
+border:none;
+border-bottom:1px solid rgba(255,255,255,0.5);
+
+color:white;
+font-size:16px;
+
+outline:none;
+}
+
+input:focus{
+border-bottom:1px solid #00e5ff;
+}
+
+
+/* MESSAGE */
+
+#message-box{
+font-size:13px;
+margin-bottom:15px;
+display:none;
+}
+
+.error-text{
+color:#ff5555;
+}
+
+.success-text{
+color:#00ff88;
+}
+
+
+/* BUTTON */
+
+.login-btn{
+
+width:100%;
+padding:14px;
+
+background:#00e5ff;
+
+border:none;
+border-radius:6px;
+
+color:black;
+font-size:16px;
+font-weight:bold;
+
+cursor:pointer;
+}
+
+.login-btn:hover{
+background:#00bcd4;
+}
+
+
+/* LINKS */
+
+.options{
+
+display:flex;
+justify-content:space-between;
+
+margin-top:20px;
+font-size:13px;
+
+}
+
+.options a{
+color:#aaa;
+text-decoration:none;
+}
+
+.options a:hover{
+color:#00e5ff;
+}
+
+
+/* ANIMATION */
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translate(-50%,-70%);
+}
+
+to{
+opacity:1;
+transform:translate(-50%,-50%);
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- VIDEO -->
+
+<video autoplay muted loop playsinline id="bg-video">
+<source src="stars.mp4" type="video/mp4">
+</video>
+
+
+
+<div class="login-container">
+
+<h2>PORTECH</h2>
+
+<p class="tagline">
+WE CREATE WEBSITE THE WAY YOU WANT
+</p>
+
+
+<div id="message-box"></div>
+
+
+<form id="loginForm">
+
+<div class="input-group">
+<input type="text" id="username" placeholder="Username" required>
+</div>
+
+<div class="input-group">
+<input type="password" id="password" placeholder="Password" required>
+</div>
+
+
+<button type="submit" class="login-btn">
+LOGIN
+</button>
+
+
+<div class="options">
+
+<a href="forgot.html">Forgot Password?</a>
+
+<a href="register.html">Register</a>
+
+</div>
+
+</form>
+
+</div>
+
+
+
+<script>
+
+/* FRONTEND LOGIN */
+
+document.getElementById('loginForm').addEventListener('submit', function(event){
+
+event.preventDefault();
+
+const username=document.getElementById('username').value;
+const password=document.getElementById('password').value;
+
+const messageBox=document.getElementById('message-box');
+
+messageBox.style.display='block';
+
+
+if(username=="admin" && password=="1234"){
+
+messageBox.className='success-text';
+
+messageBox.textContent="Login Successful";
+
+
+/* Save Login Status */
+
+localStorage.setItem("loggedIn","true");
+
+
+setTimeout(function(){
+
+window.location="index.html";
+
+},1000);
+
+}
+else{
+
+messageBox.className='error-text';
+
+messageBox.textContent="Invalid Username or Password";
+
+}
+
+});
+
+</script>
+
+
+</body>
+</html>

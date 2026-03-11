@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>E-learning UI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f7f9ff;
+color:#1e293b;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+position:sticky;
+top:0;
+}
+
+.logo{
+font-size:26px;
+font-weight:700;
+}
+
+.logo span{
+color:#5b5bff;
+}
+
+.nav-links{
+display:flex;
+gap:35px;
+list-style:none;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#64748b;
+font-weight:500;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:#5b5bff;
+}
+
+.nav-links a.active{
+color:#111;
+}
+
+/* BUTTONS */
+
+.nav-buttons{
+display:flex;
+gap:15px;
+}
+
+.btn{
+padding:10px 26px;
+border-radius:25px;
+border:none;
+cursor:pointer;
+font-weight:500;
+transition:.3s;
+}
+
+.btn-signin{
+background:#5b5bff;
+color:white;
+}
+
+.btn-signup{
+background:#ececff;
+color:#5b5bff;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+
+/* HERO */
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:80px 8%;
+}
+
+.hero-left{
+width:50%;
+}
+
+.discount{
+background:#eaffea;
+color:green;
+padding:6px 15px;
+border-radius:20px;
+display:inline-block;
+margin-bottom:20px;
+font-size:14px;
+}
+
+.hero-left h1{
+font-size:50px;
+margin-bottom:20px;
+}
+
+.hero-left p{
+color:#64748b;
+margin-bottom:30px;
+}
+
+/* SEARCH */
+
+.search-box{
+display:flex;
+background:white;
+border-radius:40px;
+padding:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.07);
+margin-bottom:25px;
+}
+
+.search-box input{
+flex:1;
+border:none;
+outline:none;
+padding:10px;
+font-size:14px;
+}
+
+.search-btn{
+background:#5b5bff;
+color:white;
+border:none;
+width:45px;
+height:45px;
+border-radius:50%;
+cursor:pointer;
+font-size:18px;
+}
+
+/* FEATURES */
+
+.features{
+display:flex;
+gap:50px;
+margin-top:20px;
+}
+
+.features span{
+display:flex;
+align-items:center;
+gap:8px;
+font-size:14px;
+}
+
+.features span::before{
+content:"✔";
+color:green;
+font-weight:bold;
+}
+
+
+/* RIGHT */
+
+.hero-right{
+width:45%;
+position:relative;
+}
+
+.hero-card{
+background:linear-gradient(135deg,#8ec5fc,#e0c3fc);
+border-radius:30px;
+padding:25px;
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+.hero-card img{
+width:100%;
+border-radius:20px;
+}
+
+
+/* FLOATING CARDS */
+
+.floating{
+position:absolute;
+background:white;
+padding:12px 18px;
+border-radius:15px;
+box-shadow:0 10px 20px rgba(0,0,0,0.08);
+font-size:14px;
+}
+
+.float-1{
+top:30px;
+left:-30px;
+}
+
+.float-2{
+top:-20px;
+right:10px;
+}
+
+
+/* TRUSTED */
+
+.trusted{
+text-align:center;
+padding:80px 8%;
+background:white;
+margin-top:40px;
+}
+
+.trusted h3{
+margin-bottom:40px;
+color:#475569;
+}
+
+.logos{
+display:flex;
+justify-content:center;
+gap:80px;
+flex-wrap:wrap;
+opacity:.6;
+}
+
+.logos img{
+height:30px;
+transition:.3s;
+}
+
+.logos img:hover{
+opacity:1;
+transform:scale(1.1);
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.nav-links{
+display:none;
+}
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-left,
+.hero-right{
+width:100%;
+}
+
+.features{
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.float-1,
+.float-2{
+display:none;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="logo">E-learning<span>.</span></div>
+
+<ul class="nav-links">
+
+<li><a href="#" class="active">Home</a></li>
+<li><a href="#">Courses</a></li>
+<li><a href="#">Mentor</a></li>
+<li><a href="#">Group</a></li>
+<li><a href="#">Testimonial</a></li>
+<li><a href="#">Docs</a></li>
+
+</ul>
+
+<div class="nav-buttons">
+
+<button class="btn btn-signin">Sign In</button>
+<button class="btn btn-signup">Sign Up</button>
+
+</div>
+
+</nav>
+
+
+<section class="hero">
+
+<div class="hero-left">
+
+<div class="discount">
+✔ 30% Discount on first course
+</div>
+
+<h1>
+Advance your engineering skills with us.
+</h1>
+
+<p>
+Build skills with expert mentors and real-world projects.
+</p>
+
+
+<div class="search-box">
+
+<input type="text" placeholder="Search courses...">
+
+<button class="search-btn">
+🔍
+</button>
+
+</div>
+
+
+<div class="features">
+
+<span>Flexible</span>
+<span>Learning Path</span>
+<span>Community</span>
+
+</div>
+
+</div>
+
+
+
+<div class="hero-right">
+
+<div class="hero-card">
+
+<img src="img2.avif">
+
+</div>
+
+
+<div class="floating float-1">
+
+50+ Courses
+
+</div>
+
+
+<div class="floating float-2">
+
+1000+ Students
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<section class="trusted">
+
+<h3>
+Trusted by companies of all sizes
+</h3>
+
+
+<div class="logos">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/HubSpot_Logo.svg">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/EdX_logo.svg">
+
+</div>
+
+</section>
+
+
+</body>
+</html>

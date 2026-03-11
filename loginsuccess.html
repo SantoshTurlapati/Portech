@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Login Successful</title>
+<link rel="icon" href="logo.png">
+
+<style>
+
+body{
+margin:0;
+padding:0;
+font-family:Segoe UI;
+background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80');
+
+background-size:cover;
+color:white;
+text-align:center;
+}
+
+.box{
+
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+
+background:rgba(0,0,0,0.5);
+
+padding:50px;
+border-radius:15px;
+
+backdrop-filter:blur(10px);
+
+box-shadow:0 0 20px cyan;
+
+width:350px;
+
+}
+
+h1{
+color:#00e5ff;
+}
+
+button{
+
+margin-top:20px;
+padding:12px 25px;
+
+border:none;
+background:#00e5ff;
+color:black;
+font-size:16px;
+font-weight:bold;
+
+border-radius:6px;
+cursor:pointer;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>Login Successful ✅</h1>
+
+<p>Welcome to Portech System</p>
+
+<p>Redirecting to Home Page...</p>
+
+<button onclick="goHome()">
+
+Go to Home
+
+</button>
+
+</div>
+
+
+<script>
+
+setTimeout(function(){
+
+window.location="index.html";
+
+},3000);
+
+
+function goHome(){
+
+window.location="index.html";
+
+}
+
+</script>
+
+
+</body>
+</html>
